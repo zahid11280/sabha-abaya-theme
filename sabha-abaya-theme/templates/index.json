@@ -1,0 +1,396 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1621243260e1af0c20": {
+      "type": "slider",
+      "blocks": {
+        "1621243260e1af0c20-1": {
+          "type": "slider_item",
+          "settings": {
+            "content_in_container": false,
+            "content_position": "left middle",
+            "text_alignment": "left",
+            "text_size": "large",
+            "text_color": "black",
+            "subheading": "",
+            "title": "",
+            "description": "",
+            "image_link": "https://bell-athletics-co.myshopify.com/collections/all-womens",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "sf__btn-secondary",
+            "button_size": "",
+            "second_button_text": "",
+            "second_button_link": "",
+            "second_button_style": "m-button--primary",
+            "second_button_size": "",
+            "show_footer": false,
+            "footer_alignment": "end",
+            "footer_text": "The ReCotton Tee",
+            "footer_button": "",
+            "footer_link": ""
+          }
+        },
+        "1621243260e1af0c20-0": {
+          "type": "slider_item",
+          "settings": {
+            "content_in_container": false,
+            "content_position": "left middle",
+            "text_alignment": "left",
+            "text_size": "large",
+            "text_color": "black",
+            "subheading": "",
+            "title": "",
+            "description": "",
+            "image_link": "https://bellathleticapparel.shop/collections/bags",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "sf__btn-secondary",
+            "button_size": "",
+            "second_button_text": "",
+            "second_button_link": "",
+            "second_button_style": "m-button--primary",
+            "second_button_size": "",
+            "show_footer": false,
+            "footer_alignment": "end",
+            "footer_text": "The ReCotton Tee",
+            "footer_button": "Shop Now",
+            "footer_link": ""
+          }
+        },
+        "slider_item_wAycwV": {
+          "type": "slider_item",
+          "settings": {
+            "content_in_container": false,
+            "content_position": "left middle",
+            "text_alignment": "left",
+            "text_size": "large",
+            "text_color": "black",
+            "subheading": "",
+            "title": "",
+            "description": "",
+            "image_link": "https://bell-athletics-co.myshopify.com/collections/all-mens",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "sf__btn-secondary",
+            "button_size": "",
+            "second_button_text": "",
+            "second_button_link": "",
+            "second_button_style": "m-button--primary",
+            "second_button_size": "",
+            "show_footer": false,
+            "footer_alignment": "end",
+            "footer_text": "The ReCotton Tee",
+            "footer_button": "Shop Now",
+            "footer_link": ""
+          }
+        },
+        "1621243260e1af0c20-2": {
+          "type": "slider_item",
+          "disabled": true,
+          "settings": {
+            "content_in_container": false,
+            "content_position": "left middle",
+            "text_alignment": "left",
+            "text_size": "large",
+            "text_color": "black",
+            "subheading": "New Arrivals",
+            "title": "Ultimate Winter<br>\nWarmer",
+            "description": "",
+            "image_link": "",
+            "button_text": "Shop Now",
+            "button_link": "",
+            "button_style": "sf__btn-secondary",
+            "button_size": "",
+            "second_button_text": "",
+            "second_button_link": "",
+            "second_button_style": "m-button--primary",
+            "second_button_size": "",
+            "show_footer": true,
+            "footer_alignment": "end",
+            "footer_text": "The ReCotton Tee",
+            "footer_button": "Shop Now",
+            "footer_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1621243260e1af0c20-1",
+        "1621243260e1af0c20-0",
+        "slider_item_wAycwV",
+        "1621243260e1af0c20-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "container": "w-full",
+        "slideshow_height": "adapt",
+        "show_overlay": false,
+        "dots_position": "right",
+        "dots_color": "dark",
+        "show_dots": true,
+        "show_arrows": false,
+        "autorotate": true,
+        "autorotate_speed": 4,
+        "use_content_above": false,
+        "custom_class": "sf-home__slideshow",
+        "animations": "inherit"
+      }
+    },
+    "sabha_hero_banner_8qpx9w": {
+      "type": "sabha-hero-banner",
+      "name": "Sabha Hero Banner",
+      "settings": {
+        "image": "shopify://shop_images/download_-_2026-10-01T131750.104.png",
+        "mobile_image": "shopify://shop_images/Embroidered_Abayas_in_a_Golden_Interior.png",
+        "eyebrow": "The Signature Collection",
+        "heading": "Quietly luxurious.",
+        "description": "Refined silhouettes for the woman who chooses elegance without excess.",
+        "button_text": "Explore the collection",
+        "button_link": "shopify://collections/demo"
+      }
+    },
+    "sabha_product_grid_pVULdG": {
+      "type": "sabha-product-grid",
+      "blocks": {
+        "product_YCxgn8": {
+          "type": "product",
+          "settings": {
+            "product": "bloom-cuff-abaya",
+            "badge": ""
+          }
+        },
+        "product_LFrjiX": {
+          "type": "product",
+          "settings": {
+            "product": "blossom-embroidered-abaya",
+            "badge": ""
+          }
+        },
+        "product_97Tmm3": {
+          "type": "product",
+          "settings": {
+            "product": "gilded-leaf-abaya",
+            "badge": ""
+          }
+        },
+        "product_mKdKaf": {
+          "type": "product",
+          "settings": {
+            "product": "golden-vine-abaya",
+            "badge": ""
+          }
+        },
+        "product_eKwYaA": {
+          "type": "product",
+          "settings": {
+            "product": "marble-flow-abaya",
+            "badge": ""
+          }
+        },
+        "product_qpBt6e": {
+          "type": "product",
+          "settings": {
+            "product": "paisley-drift-abaya",
+            "badge": ""
+          }
+        },
+        "product_UGf7QN": {
+          "type": "product",
+          "settings": {
+            "product": "ribbon-bloom-abaya",
+            "badge": ""
+          }
+        },
+        "product_VAYkR7": {
+          "type": "product",
+          "settings": {
+            "product": "rosebud-stitch-abaya",
+            "badge": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_YCxgn8",
+        "product_LFrjiX",
+        "product_97Tmm3",
+        "product_mKdKaf",
+        "product_eKwYaA",
+        "product_qpBt6e",
+        "product_UGf7QN",
+        "product_VAYkR7"
+      ],
+      "name": "Sabha Product Grid",
+      "settings": {
+        "eyebrow": "Just arrived",
+        "heading": "New season, refined.",
+        "link_label": "View all pieces →",
+        "link_url": "",
+        "anchor": "new",
+        "collection": "demo",
+        "limit": 4,
+        "columns": "4",
+        "show_badge": true,
+        "show_swatches": true,
+        "show_quick": true,
+        "ink": "#1d1a18",
+        "muted": "#766f68",
+        "gold": "#b99159",
+        "btn_bg": "#f6f1ea",
+        "bg": "#ffffff",
+        "pad_top": 85,
+        "pad_bottom": 85
+      }
+    },
+    "sabha_story_jQLrFU": {
+      "type": "sabha-story",
+      "custom_css": [
+        ".sb-storycopy p {line-height: 1.8; color: var(--muted); font-size: 16px; margin-bottom: 10px;}"
+      ],
+      "name": "Sabha Story",
+      "settings": {
+        "image": "shopify://shop_images/ChatGPTImageSep28_2026_10_58_44AM.png",
+        "frame": false,
+        "min_h": 620,
+        "min_h_mobile": 350,
+        "image_pos": "top",
+        "overlay": 0,
+        "image_right": false,
+        "full_width": false,
+        "text_pad": 10,
+        "text_pad_mobile": 55,
+        "text_align": "left",
+        "anchor": "about",
+        "eyebrow": "Our story",
+        "heading": "Modesty, made modern.",
+        "heading_size": 56,
+        "heading_size_mobile": 40,
+        "text": "<p>Sabha is rooted in a love for refined simplicity. Each piece is designed to move with you—from quiet mornings to meaningful occasions—with beautiful fabrics, considered details and timeless ease.</p>",
+        "button_label": "Discover Sabha",
+        "button_url": "shopify://pages/our-story",
+        "button_style": "outline",
+        "bg": "#f6f1ea",
+        "ink": "#1d1a18",
+        "muted": "#766f68",
+        "gold": "#c78b29"
+      }
+    },
+    "sabha_signatures_CCAnGq": {
+      "type": "sabha-signatures",
+      "blocks": {
+        "product_GdMK39": {
+          "type": "product",
+          "disabled": true,
+          "settings": {
+            "product": "",
+            "badge": ""
+          }
+        },
+        "product_arMkUM": {
+          "type": "product",
+          "settings": {
+            "product": "wildflower-garden-abaya",
+            "badge": ""
+          }
+        },
+        "product_VDwpMA": {
+          "type": "product",
+          "settings": {
+            "product": "tassel-drape-abaya",
+            "badge": ""
+          }
+        },
+        "product_YyPJec": {
+          "type": "product",
+          "settings": {
+            "product": "swirl-abaya",
+            "badge": ""
+          }
+        },
+        "product_nfNWg3": {
+          "type": "product",
+          "settings": {
+            "product": "sabha-sequin-abaya",
+            "badge": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_GdMK39",
+        "product_arMkUM",
+        "product_VDwpMA",
+        "product_YyPJec",
+        "product_nfNWg3"
+      ],
+      "name": "Sabha Signatures",
+      "settings": {
+        "eyebrow": "Loved by you",
+        "heading": "Sabha signatures",
+        "link_label": "",
+        "link_url": "",
+        "anchor": "",
+        "collection": "",
+        "limit": 4,
+        "columns": "4",
+        "show_badge": true,
+        "show_swatches": true,
+        "show_quick": true,
+        "ink": "#1d1a18",
+        "muted": "#766f68",
+        "gold": "#b99159",
+        "btn_bg": "#f6f1ea",
+        "bg": "#ffffff",
+        "pad_top": 85,
+        "pad_bottom": 85
+      }
+    },
+    "sabha_promise_section_jN3fTU": {
+      "type": "sabha-promise-section",
+      "blocks": {
+        "item_x6keXK": {
+          "type": "item",
+          "settings": {
+            "title": "Considered craftsmanship",
+            "text": "Made with attention to every detail"
+          }
+        },
+        "item_B9REzr": {
+          "type": "item",
+          "settings": {
+            "title": "Complimentary delivery",
+            "text": "On orders over $150"
+          }
+        },
+        "item_YG4aLA": {
+          "type": "item",
+          "settings": {
+            "title": "Easy returns",
+            "text": "14 days to change your mind"
+          }
+        }
+      },
+      "block_order": [
+        "item_x6keXK",
+        "item_B9REzr",
+        "item_YG4aLA"
+      ],
+      "name": "Sabha Promise Section",
+      "settings": {}
+    }
+  },
+  "order": [
+    "1621243260e1af0c20",
+    "sabha_hero_banner_8qpx9w",
+    "sabha_product_grid_pVULdG",
+    "sabha_story_jQLrFU",
+    "sabha_signatures_CCAnGq",
+    "sabha_promise_section_jN3fTU"
+  ]
+}

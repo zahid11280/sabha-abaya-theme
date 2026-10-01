@@ -1,0 +1,44 @@
+<section class="sb-promise">
+  {%- for block in section.blocks -%}
+    <div {{ block.shopify_attributes }}>
+      <b>{{ block.settings.title }}</b>
+      <small>{{ block.settings.text }}</small>
+    </div>
+  {%- endfor -%}
+</section>
+
+{% stylesheet %}
+.sb-promise{--line:#ded6cd;--muted:#766f68;display:grid;grid-template-columns:repeat(3,1fr);padding:30px 5vw;border-bottom:1px solid var(--line);font-family:Arial,Helvetica,sans-serif;color:#1d1a18;background:#fff}
+.sb-promise div{text-align:center;border-right:1px solid var(--line)}
+.sb-promise div:last-child{border:0}
+.sb-promise b{font-family:Georgia,serif;font-weight:400}
+.sb-promise small{display:block;color:var(--muted);margin-top:6px;font-size:13.33px}
+@media(max-width:900px){.sb-promise{grid-template-columns:1fr;padding:15px}.sb-promise div{border:0;border-bottom:1px solid var(--line);padding:15px}}
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Sabha Promise",
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Promise item",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Considered craftsmanship" },
+        { "type": "text", "id": "text", "label": "Text", "default": "Made with attention to every detail" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sabha Promise",
+      "blocks": [
+        { "type": "item", "settings": { "title": "Considered craftsmanship", "text": "Made with attention to every detail" } },
+        { "type": "item", "settings": { "title": "Complimentary delivery", "text": "On orders over $150" } },
+        { "type": "item", "settings": { "title": "Easy returns", "text": "14 days to change your mind" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

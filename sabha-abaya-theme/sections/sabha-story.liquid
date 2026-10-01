@@ -1,0 +1,175 @@
+<section
+  class="sbs-story{% if section.settings.image_right %} sbs-story--right{% endif %}{% if section.settings.full_width %} sbs-story--full{% endif %}"
+  id="{% if section.settings.anchor != blank %}{{ section.settings.anchor | handleize }}{% else %}sbs-story-{{ section.id }}{% endif %}"
+  style="
+    --cream:{{ section.settings.bg }};
+    --ink:{{ section.settings.ink }};
+    --muted:{{ section.settings.muted }};
+    --gold:{{ section.settings.gold }};
+    --minh:{{ section.settings.min_h }}px;
+    --minhm:{{ section.settings.min_h_mobile }}px;
+    --pos:{{ section.settings.image_pos }};
+    --pad:{{ section.settings.text_pad }}%;
+    --padm:{{ section.settings.text_pad_mobile }}px;
+    --hs:{{ section.settings.heading_size }}px;
+    --hsm:{{ section.settings.heading_size_mobile }}px;
+    --ta:{{ section.settings.text_align }};
+    --ov:{{ section.settings.overlay | divided_by: 100.0 }};
+  ">
+  <div class="sbs-art{% if section.settings.image != blank and section.settings.frame %} sbs-art--frame{% endif %}">
+    {%- if section.settings.image != blank -%}
+      {{
+        section.settings.image
+        | image_url: width: 1600
+        | image_tag:
+          loading: 'lazy',
+          widths: '600, 900, 1200, 1600',
+          sizes: '(max-width: 900px) 100vw, 50vw',
+          alt: section.settings.image.alt | default: section.settings.heading
+      }}
+      {%- if section.settings.overlay > 0 -%}<span class="sbs-ov" aria-hidden="true"></span>{%- endif -%}
+    {%- else -%}
+      <div class="sbs-mono" aria-hidden="true">
+        <span>{{ shop.name | strip | slice: 0 | upcase }}</span>
+        {%- if request.design_mode -%}<small>Add a portrait photo in the section settings</small>{%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+  <div class="sbs-copy">
+    {%- if section.settings.eyebrow != blank -%}
+      <div class="sbs-eyebrow">{{ section.settings.eyebrow }}</div>
+    {%- endif -%}
+    {%- if section.settings.heading != blank -%}
+      <h2>{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    {%- if section.settings.text != blank -%}
+      <div class="sbs-text">{{ section.settings.text }}</div>
+    {%- endif -%}
+    {%- if section.settings.button_label != blank -%}
+      <a class="sbs-btn sbs-btn--{{ section.settings.button_style }}" href="{{ section.settings.button_url | default: '#' }}">{{ section.settings.button_label }}</a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% stylesheet %}
+.sbs-story{display:grid;grid-template-columns:1fr 1fr;background:var(--cream);font-family:Arial,Helvetica,sans-serif;font-size:16px;color:var(--ink)}
+.sbs-story *{box-sizing:border-box}
+.sbs-story--full{width:100vw;margin-left:calc(50% - 50vw)}
+.sbs-story--right .sbs-art{order:2}
+
+/* Image side: min-height 480px like the source page. Photo is absolutely placed so it can never stretch the section */
+.sbs-art{position:relative;min-height:var(--minh);background:linear-gradient(145deg,#d9c8b4,#a99783);display:grid;place-items:center;overflow:hidden}
+.sbs-art img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:var(--pos);display:block}
+.sbs-ov{position:absolute;inset:0;background:#000;opacity:var(--ov);pointer-events:none}
+.sbs-art--frame:after{content:"";position:absolute;inset:18px;border:1px solid rgba(255,255,255,.65);pointer-events:none}
+
+/* Soft fallback when no photo is chosen yet (no black shape) */
+.sbs-mono{display:grid;place-items:center;gap:18px;text-align:center;padding:24px}
+.sbs-mono span{display:grid;place-items:center;width:110px;height:110px;border:1px solid var(--gold);border-radius:50%;font:400 3rem Georgia,serif;color:var(--gold);box-shadow:0 0 0 8px rgba(255,255,255,.35)}
+.sbs-mono small{color:#fff;font-size:.8rem;letter-spacing:.06em;max-width:220px;line-height:1.5}
+
+/* Text side: padding 10%, vertically centred */
+.sbs-copy{padding:var(--pad);align-self:center;text-align:var(--ta);min-width:0}
+.sbs-story .sbs-eyebrow{text-transform:uppercase;letter-spacing:.22em;font-size:.72rem;color:var(--gold);margin:0 0 25px}
+.sbs-copy h2{font:400 var(--hs) Georgia,serif;margin:0 0 20px;color:var(--ink);text-transform:none;letter-spacing:normal}
+.sbs-text{line-height:1.8;color:var(--muted)}
+.sbs-text p{margin:1em 0;line-height:1.8;color:var(--muted)}
+
+/* Button: text-width only (never stretches to the column) */
+.sbs-story .sbs-btn{display:inline-flex;width:fit-content;max-width:100%;flex:none;text-decoration:none;padding:15px 28px;min-height:49px;align-items:center;justify-content:center;letter-spacing:.08em;text-transform:uppercase;font-size:.75rem;line-height:1.2;border:1px solid var(--ink);transition:background .25s,color .25s,border-color .25s}
+.sbs-story .sbs-btn--outline{background:transparent;color:var(--ink)}
+.sbs-story .sbs-btn--outline:hover{background:var(--ink);color:#fff}
+.sbs-story .sbs-btn--solid{background:var(--ink);color:#fff}
+.sbs-story .sbs-btn--solid:hover{background:var(--gold);border-color:var(--gold)}
+.sbs-story .sbs-btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+@media(max-width:900px){
+  .sbs-story{grid-template-columns:1fr}
+  .sbs-story--right .sbs-art{order:0}
+  .sbs-art{min-height:var(--minhm)}
+}
+@media(max-width:560px){
+  .sbs-copy{padding:var(--padm) 25px}
+  .sbs-copy h2{font-size:var(--hsm)}
+  .sbs-art--frame:after{inset:12px}
+}
+@media(prefers-reduced-motion:reduce){.sbs-story .sbs-btn{transition:none}}
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Sabha Story",
+  "tag": "section",
+  "settings": [
+    { "type": "header", "content": "Image" },
+    { "type": "image_picker", "id": "image", "label": "Story photo (portrait works best)" },
+    { "type": "checkbox", "id": "frame", "label": "Show thin inner frame on photo", "default": true },
+    { "type": "range", "id": "min_h", "label": "Section height (desktop)", "min": 300, "max": 900, "step": 10, "unit": "px", "default": 480, "info": "Source page value: 480px" },
+    { "type": "range", "id": "min_h_mobile", "label": "Image height (mobile)", "min": 250, "max": 700, "step": 10, "unit": "px", "default": 350, "info": "Source page value: 350px" },
+    {
+      "type": "select",
+      "id": "image_pos",
+      "label": "Image focus (which part stays visible when cropped)",
+      "default": "center",
+      "options": [
+        { "value": "center", "label": "Center" },
+        { "value": "top", "label": "Top" },
+        { "value": "bottom", "label": "Bottom" },
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ]
+    },
+    { "type": "range", "id": "overlay", "label": "Image darkening", "min": 0, "max": 60, "step": 5, "unit": "%", "default": 0 },
+
+    { "type": "header", "content": "Layout" },
+    { "type": "checkbox", "id": "image_right", "label": "Show image on the right", "default": false },
+    { "type": "checkbox", "id": "full_width", "label": "Full width (break out of page container)", "default": false },
+    { "type": "range", "id": "text_pad", "label": "Text padding (desktop)", "min": 4, "max": 20, "step": 1, "unit": "%", "default": 10, "info": "Source page value: 10%" },
+    { "type": "range", "id": "text_pad_mobile", "label": "Text top/bottom padding (mobile)", "min": 30, "max": 100, "step": 5, "unit": "px", "default": 55 },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Text alignment",
+      "default": "left",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ]
+    },
+    { "type": "text", "id": "anchor", "label": "Anchor ID (for menu links like #about)", "default": "about" },
+
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Our story" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Modesty, made modern." },
+    { "type": "range", "id": "heading_size", "label": "Heading size (desktop)", "min": 32, "max": 96, "step": 2, "unit": "px", "default": 56, "info": "Source page value: 3.5rem = 56px" },
+    { "type": "range", "id": "heading_size_mobile", "label": "Heading size (mobile)", "min": 28, "max": 64, "step": 2, "unit": "px", "default": 40, "info": "Source page value: 2.5rem = 40px" },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Sabha is rooted in a love for refined simplicity. Each piece is designed to move with you—from quiet mornings to meaningful occasions—with beautiful fabrics, considered details and timeless ease.</p>"
+    },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Discover Sabha" },
+    { "type": "url", "id": "button_url", "label": "Button URL" },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button style",
+      "default": "outline",
+      "options": [
+        { "value": "outline", "label": "Outline" },
+        { "value": "solid", "label": "Solid" }
+      ]
+    },
+
+    { "type": "header", "content": "Colours" },
+    { "type": "color", "id": "bg", "label": "Background (cream)", "default": "#f6f1ea" },
+    { "type": "color", "id": "ink", "label": "Heading / button (ink)", "default": "#1d1a18" },
+    { "type": "color", "id": "muted", "label": "Body text (muted)", "default": "#766f68" },
+    { "type": "color", "id": "gold", "label": "Eyebrow / accent", "default": "#b99159" }
+  ],
+  "presets": [{ "name": "Sabha Story" }]
+}
+{% endschema %}

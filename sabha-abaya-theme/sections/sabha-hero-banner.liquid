@@ -1,0 +1,470 @@
+<section class="sabha-hero">
+
+  <div class="sabha-hero-overlay"></div>
+
+  <div class="sabha-hero-container">
+
+    <div class="sabha-hero-content">
+
+      {% if section.settings.eyebrow != blank %}
+        <div class="sabha-eyebrow">
+          {{ section.settings.eyebrow }}
+        </div>
+      {% endif %}
+
+      {% if section.settings.heading != blank %}
+        <h1>
+          {{ section.settings.heading }}
+        </h1>
+      {% endif %}
+
+      {% if section.settings.description != blank %}
+        <p>
+          {{ section.settings.description }}
+        </p>
+      {% endif %}
+
+      {% if section.settings.button_text != blank %}
+        <a
+          href="{{ section.settings.button_link }}"
+          class="sabha-hero-btn"
+        >
+          {{ section.settings.button_text }}
+        </a>
+      {% endif %}
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<style>
+
+  #shopify-section-{{ section.id }} .sabha-hero {
+
+    min-height: 700px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    color: #ffffff;
+
+    background-color: #0d0c0b;
+
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(13, 12, 11, 0.94) 0%,
+        rgba(13, 12, 11, 0.72) 38%,
+        rgba(13, 12, 11, 0) 65%
+      )
+
+      {% if section.settings.image != blank %}
+        ,
+        url('{{ section.settings.image | image_url: width: 2400 }}')
+      {% endif %}
+    ;
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+  }
+
+
+  #shopify-section-{{ section.id }} .sabha-hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+  }
+
+
+  #shopify-section-{{ section.id }} .sabha-hero-container {
+
+    width: 100%;
+
+    padding: 8vw;
+
+    position: relative;
+
+    z-index: 2;
+
+  }
+
+
+  #shopify-section-{{ section.id }} .sabha-hero-content {
+
+    max-width: 570px;
+
+  }
+
+
+  #shopify-section-{{ section.id }} .sabha-eyebrow {
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.22em;
+
+    font-size: 12px;
+
+    color: #d8bd91;
+
+    margin-bottom: 25px;
+
+    font-family: Arial, sans-serif;
+
+  }
+
+
+  #shopify-section-{{ section.id }} .sabha-hero h1 {
+
+    font-family: Georgia, serif;
+
+    font-weight: 400;
+
+    font-size: clamp(52px, 7vw, 112px);
+
+    line-height: 0.92;
+
+    margin: 0 0 25px;
+
+    color: #ffffff;
+
+  }
+
+
+  #shopify-section-{{ section.id }} .sabha-hero p {
+
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    max-width: 470px;
+
+    color: #e5ded6;
+
+    margin: 0 0 35px;
+
+  }
+
+
+  #shopify-section-{{ section.id }} .sabha-hero-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 49px;
+
+    padding: 15px 24px;
+
+    background: #ffffff;
+
+    color: #1d1a18;
+
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+
+    transition:
+      background 0.3s ease,
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+
+  }
+
+
+  #shopify-section-{{ section.id }} .sabha-hero-btn:hover {
+
+    background: #d9c8b4;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+  }
+
+
+
+  /* ================================
+     TABLET
+  ================================= */
+
+  @media screen and (max-width: 900px) {
+
+    #shopify-section-{{ section.id }} .sabha-hero {
+
+      min-height: 640px;
+
+      background-position: 62% center;
+
+    }
+
+
+    #shopify-section-{{ section.id }} .sabha-hero-container {
+
+      padding: 50px 7vw;
+
+    }
+
+
+    #shopify-section-{{ section.id }} .sabha-hero-content {
+
+      padding-top: 120px;
+
+    }
+
+  }
+
+
+
+  /* ================================
+     MOBILE
+  ================================= */
+
+  @media screen and (max-width: 560px) {
+
+    #shopify-section-{{ section.id }} .sabha-hero {
+
+      min-height: 700px;
+
+      align-items: flex-end;
+
+      {% if section.settings.mobile_image != blank %}
+
+        background-image:
+          linear-gradient(
+            180deg,
+            rgba(13, 12, 11, 0.05) 0%,
+            rgba(13, 12, 11, 0.12) 30%,
+            rgba(13, 12, 11, 0.55) 68%,
+            rgba(13, 12, 11, 0.92) 100%
+          ),
+          url('{{ section.settings.mobile_image | image_url: width: 1000 }}');
+
+      {% elsif section.settings.image != blank %}
+
+        background-image:
+          linear-gradient(
+            180deg,
+            rgba(13, 12, 11, 0.05) 0%,
+            rgba(13, 12, 11, 0.12) 30%,
+            rgba(13, 12, 11, 0.55) 68%,
+            rgba(13, 12, 11, 0.92) 100%
+          ),
+          url('{{ section.settings.image | image_url: width: 1200 }}');
+
+      {% endif %}
+
+      background-size: cover;
+
+      background-position: center center;
+
+      background-repeat: no-repeat;
+
+    }
+
+
+    #shopify-section-{{ section.id }} .sabha-hero-container {
+
+      padding: 45px 24px 48px;
+
+    }
+
+
+    #shopify-section-{{ section.id }} .sabha-hero-content {
+
+      max-width: 100%;
+
+      padding-top: 0;
+
+    }
+
+
+    #shopify-section-{{ section.id }} .sabha-eyebrow {
+
+      font-size: 10px;
+
+      letter-spacing: 0.2em;
+
+      margin-bottom: 16px;
+
+    }
+
+
+    #shopify-section-{{ section.id }} .sabha-hero h1 {
+
+      font-size: 48px;
+
+      line-height: 0.95;
+
+      margin-bottom: 18px;
+
+      max-width: 420px;
+
+    }
+
+
+    #shopify-section-{{ section.id }} .sabha-hero p {
+
+      font-size: 16px;
+
+      line-height: 1.6;
+
+      max-width: 330px;
+
+      margin-bottom: 25px;
+
+    }
+
+
+    #shopify-section-{{ section.id }} .sabha-hero-btn {
+
+      min-height: 47px;
+
+      padding: 14px 22px;
+
+      font-size: 11px;
+
+    }
+
+  }
+
+
+
+  /* ================================
+     SMALL MOBILE
+  ================================= */
+
+  @media screen and (max-width: 390px) {
+
+    #shopify-section-{{ section.id }} .sabha-hero {
+
+      min-height: 680px;
+
+    }
+
+
+    #shopify-section-{{ section.id }} .sabha-hero-container {
+
+      padding-left: 20px;
+
+      padding-right: 20px;
+
+      padding-bottom: 40px;
+
+    }
+
+
+    #shopify-section-{{ section.id }} .sabha-hero h1 {
+
+      font-size: 42px;
+
+    }
+
+
+    #shopify-section-{{ section.id }} .sabha-hero p {
+
+      font-size: 15px;
+
+      max-width: 290px;
+
+    }
+
+  }
+
+</style>
+
+
+{% schema %}
+{
+  "name": "Sabha Hero Banner",
+
+  "settings": [
+
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Desktop Hero Image"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Hero Image"
+    },
+
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "The Signature Collection"
+    },
+
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Quietly luxurious."
+    },
+
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Refined silhouettes for the woman who chooses elegance without excess."
+    },
+
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Explore the collection"
+    },
+
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+
+  ],
+
+  "presets": [
+    {
+      "name": "Sabha Hero Banner"
+    }
+  ]
+}
+{% endschema %}
